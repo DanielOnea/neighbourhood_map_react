@@ -5,7 +5,6 @@
 This project is created for Udacity Front end developer Nanodegree.
 This project allows user to search locations and show its details on a map.
 
-live version - (
 
 ## Start the App:
 * Make sure that you have Node.js installed on your local and then clone this repository.
