@@ -20,7 +20,7 @@ class App extends React.Component {
     this.setState({query: query})
   }
 
-  //Update the data fater geeting the info from the API
+  
   updateData = (newData) => {
     this.setState({
       data:newData,
@@ -42,7 +42,7 @@ class App extends React.Component {
 
             this.setState({map: map, infoWindows: infowindow});
 
-            // Fetch food restaurants around my area
+            // Fetch food restaurants around my area via Foursquare
             fetch('https://api.foursquare.com/v2/venues/search?ll=44.433925,26.098342&query=food&radius=1000&categoryId=4d4b7105d754a06374d81259&client_id=ZBDNRUXL2PBLUFEJ5MWCZCFTCY0RKOBJGBWZGCK0DNCXC5F5&client_secret=GQCOWQNQOPZ3BT4USWW3WX4NJHOD40NLOHI0SCV31FUKHWPX&v=20201215&limit=50')
                 .then(
                     res => {
@@ -70,7 +70,6 @@ class App extends React.Component {
         let self = this;
         let locs = this.state.locations;
 
-        // Traverse through each locations and add marker
         locs.forEach(loc => {
             let marker = new window.google.maps.Marker({
                 position: {lat: loc.location.lat, lng: loc.location.lng},
@@ -78,7 +77,7 @@ class App extends React.Component {
                 title: loc.name
             });
 
-            // Add event listener to markers to open info window
+            // Event listener to open info window
             marker.addListener('click', function () {
                 self.showInfoWindow(marker, loc);
             });
@@ -110,7 +109,6 @@ class App extends React.Component {
             venueWins.push(this.state.infoWindows)
             this.setState({venueWindows: venueWins})
         }
-
 
     };
 
@@ -145,7 +143,7 @@ class App extends React.Component {
         window.alert("Google Maps failed to Load")
     }
 
-// show search window on mobile phone
+// for mobile
     showSearch = (e) => {
         // document.getElementById('searchContainer').style.display = 'block';
         document.getElementById('searchContainer').style.zIndex = 1000;
