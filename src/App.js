@@ -128,7 +128,8 @@ class App extends React.Component {
             '<P tabindex="0">' + currentAddress + '</P>' +
             '<P tabindex="0">' + currentCity + '</P>' +
             '<P tabindex="0">' + currentCountry + '</P>' +
-            '</div>' +
+            '</div>' + 
+            '<p>Fetched by <a href="https://foursquare.com/">Foursquare</a></p>' +
             '</div>';
         this.state.infoWindows.setContent(contentString);
     };
