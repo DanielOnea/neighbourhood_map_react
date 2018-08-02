@@ -32,7 +32,7 @@ class Filter extends React.Component {
         });
         self.setState({markers: newMarkers})
     };
-
+/*eslint-disable*/
     render() {
         let current,
             setmark = this.props.showInfo,
